@@ -1,0 +1,141 @@
+.carousel {
+    margin-top: 80px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 346px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.carousel-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+}
+
+.slide {
+    flex: 0 0 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: flex;
+    opacity: 1;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Botones de navegaciÃ³n */
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries para Responsividad */
+/* Mantengo tu código intacto y añado lo siguiente */
+
+/* Imagenes del carrusel para móviles */
+/* Para móviles (max-width: 425px) */
+@media (max-width: 425px) {
+    .carousel {
+        height: auto;
+        /* Permite que el carrusel crezca dinámicamente */
+        min-height: 500px;
+        /* Mínimo de 500px para garantizar suficiente espacio */
+        width: 100%;
+        /* Asegura que el carrusel ocupe todo el ancho */
+    }
+
+    .carousel-content.mobile {
+        display: flex;
+        height: 100%;
+        /* Se ajusta al contenedor del carrusel */
+        align-items: center;
+        /* Centrar imágenes verticalmente */
+        justify-content: center;
+        /* Centrar imágenes horizontalmente */
+    }
+
+    .carousel-content.desktop {
+        display: none;
+        /* Ocultar contenido de escritorio */
+    }
+
+    .image-container {
+        width: 100%;
+        /* Asegura que la imagen ocupe todo el ancho */
+        height: 100%;
+        overflow: hidden;
+        /* Asegura que las imágenes no salgan del contenedor */
+        position: relative;
+    }
+
+    .image-container img {
+        width: 100%;
+        /* Las imágenes ocupan el 100% del ancho */
+        height: 100%;
+        /* Las imágenes ocupan el 100% del alto */
+        object-fit: cover;
+        /* Asegura que las imágenes cubran el área sin distorsión */
+    }
+
+    button.prev,
+    button.next {
+        width: 30px;
+        height: 30px;
+    }
+}

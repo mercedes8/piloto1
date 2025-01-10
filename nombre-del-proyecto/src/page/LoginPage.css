@@ -1,0 +1,57 @@
+/* Encapsulamiento para evitar conflictos con otras partes del proyecto */
+.login-page-container {
+  display: flex;
+  height: calc(100vh - 100px);
+  align-items: center;
+  justify-content: center;
+  background: greenyellow;
+}
+
+.login-form-wrapper {
+  background-color: #0000ff;
+  max-width: 28rem;
+  padding: 2.5rem;
+  border-radius: 0.375rem;
+}
+
+.login-error-message {
+  background-color: #ef4444;
+  padding: 0.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.login-input-field,
+.login-button {
+  width: 100%;
+  background-color: #ffffff;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin: 0.5rem 0;
+}
+
+.login-input-error {
+  color: #ef4444;
+}
+
+.login-submit-button {
+  background-color: #0ea5e9;
+}
+
+.login-link-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.login-signup-link {
+  color: #0ea5e9;
+}

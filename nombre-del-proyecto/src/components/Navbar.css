@@ -1,0 +1,352 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px auto;
+  padding: 0 20px;
+  height: 70px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ffb17d 0%, #ff6060 100%);
+  box-shadow: 0 4px 6px rgba(142, 72, 255, 0.575);
+  position: absolute;
+  /* Inicialmente absoluto */
+  top: 0.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+
+  z-index: 1000;
+  transition: background 0.5s ease;
+}
+
+/* Estilo cuando el navbar está en estado scrolled */
+.navbar.scrolled {
+  position: fixed;
+  /* Se vuelve fijo al hacer scroll */
+  top: 0;
+  background: linear-gradient(90deg, #ffb17d 0%, #ff6060 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Añadimos sombra más ligera */
+}
+
+.navbar:hover {
+  background: linear-gradient(100deg, #ffaf38 0%, #f4a3ff 100%, #a3ff0e 70%);
+  /* Cambia gradiente de colores */
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+}
+
+.navbar-logo:hover {
+  color: #007bff;
+}
+
+/* Enlaces principales */
+.navbar-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: #007bff;
+}
+
+/* Estilo del Dropdown */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  /* Centra la cortina en el medio del elemento padre */
+  transform: translateX(-50%);
+  /* Ajuste para que esté completamente centrado */
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgb(216, 169, 255);
+  z-index: 1000;
+
+  /* Estado inicial: oculto */
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-90%, -10px);
+  /* Pequeño desplazamiento inicial */
+  transition: opacity 1.5s ease, transform 1.0s ease, visibility 1.0s ease;
+}
+
+/* Cuando el nav-item está en hover */
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  /* Regresa a su posición original */
+}
+
+/* Estilo de las columnas del dropdown */
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  /* Separación entre columnas */
+  min-width: 150px;
+  /* Ancho mínimo para cada columna */
+}
+
+/* Enlaces del dropdown */
+.category a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.category a:hover {
+  color: #0077ff;
+}
+
+/* Barra de búsqueda en el navbar */
+.search-input-container {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  position: absolute;
+  top: 18px;
+  /* Ajuste para que esté dentro del navbar */
+  left: calc(45% - 220px);
+  /* Coloca la barra justo al lado izquierdo de la lupa */
+  background: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgb(255, 255, 255);
+  z-index: 1001;
+  /* Para asegurarse que esté encima del contenido */
+  visibility: hidden;
+  /* Inicialmente no visible */
+  opacity: 0;
+  /* Inicialmente invisible */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* Transición suave */
+}
+
+.search-input-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.search-input-container input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-input-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-input-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Ajuste en la posición de los iconos y otros elementos */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 40px;
+  /* Asegura que no se solapen con la barra de búsqueda */
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #007bff;
+}
+
+/* Botón de logout */
+.logout-button {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #c0392b;
+}
+
+/* Ajuste en la posición de los botones de autenticación */
+.auth-links {
+  display: flex;
+  gap: 15px;
+  margin-right: 60px;
+  /* Aumento el margen para que no estén tan cerca del borde */
+  margin-left: 20px;
+  /* Para moverlos ligeramente hacia la izquierda */
+}
+
+/* Alineación de los enlaces de autenticación */
+.auth-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #007bff;
+}
+
+/* Estilos existentes... */
+/* Mantenemos los estilos previos, y añadimos lo siguiente: */
+
+/* Estilos para el menú hamburguesa */
+.menu-hamburger {
+  margin-top: 60px;
+  display: flex;
+  /* Asegura que sea un contenedor visible */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+
+  /* Fondo blanco para mejorar la visibilidad */
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 2000;
+  transform: translateX(100%);
+  /* Oculto inicialmente */
+  transition: transform 0.3s ease;
+}
+
+/* Mostrar menú cuando está activo */
+.menu-hamburger.active {
+  transform: translateX(0);
+  /* Desplazamiento para hacerlo visible */
+}
+
+/* Botón de hamburguesa */
+.hamburger-button {
+  display: none;
+  /* Solo visible en pantallas pequeñas */
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2001;
+}
+
+.hamburger-button:hover {
+  color: #007bff;
+}
+
+/* Enlaces dentro del menú hamburguesa */
+.menu-hamburger a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.menu-hamburger a:hover {
+  color: #007bff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+
+  .navbar-links,
+  .navbar-icons {
+    display: none;
+    /* Ocultar elementos no esenciales */
+  }
+
+  .hamburger-button {
+    display: block;
+    /* Mostrar el botón de hamburguesa */
+  }
+
+  /* Hacer visible la barra de búsqueda en móvil */
+  .search-input-container {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+
+    top: 10px;
+    /* Ajuste de la posición */
+    left: auto;
+    /* Asegura que no se vea afectado por la propiedad 'left' */
+    right: 0;
+    /* O usa transform para ajustes finos */
+    z-index: 1001;
+    gap: 10px;
+    width: 110px;
+    /* Tamaño más pequeño del input */
+    transform: translateX(-90px);
+    /* Ajusta el valor para moverlo hacia la derecha */
+  }
+
+  .search-input-container input {
+    width: 110px;
+    /* Tamaño más pequeño del input */
+    font-size: 0rem;
+    /* Tamaño de texto más pequeño */
+  }
+
+  .search-input-container button {
+    background-color: transparent;
+    /* Lupa sin fondo */
+    border: none;
+    color: #333;
+    font-size: 1.2rem;
+    /* Ajustamos el tamaño del ícono */
+    cursor: pointer;
+  }
+
+  .search-input-container button:hover {
+    color: #007bff;
+  }
+}

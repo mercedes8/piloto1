@@ -1,0 +1,101 @@
+/* CircularCarousel.css */
+.circular-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: -260px;
+    flex-grow: 1;
+    margin-left: 260px;
+    margin-right: 110px;
+    width: auto;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.circular-slide {
+    display: flex;
+    gap: 45px;
+    animation: moveCarousel 5s linear infinite;
+    justify-content: center;
+}
+
+.circular-slide img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    border: 5px solid #181818;
+}
+
+.circular-slide img:hover {
+    transform: scale(1.1);
+}
+
+/* Animación para mover el carrusel sin demora */
+@keyframes moveCarousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+.circular-carousel:hover .circular-slide {
+    animation-play-state: paused;
+}
+
+/* Cuando el cursor se quita, reanudar la animación */
+.circular-carousel:not(:hover) .circular-slide {
+    animation-play-state: running;
+}
+
+@media (max-width: 768px) {
+    .circular-carousel {
+        margin-top: 30px;
+        /* Reducir margen superior */
+        margin-left: 40px;
+        /* Centramos horizontalmente */
+        margin-right: 0;
+        width: 90%;
+        /* Ancho más flexible */
+    }
+
+    .circular-slide {
+        gap: 30px;
+        /* Reducir el espacio entre imágenes */
+    }
+
+    .circular-slide img {
+        width: 100px;
+        /* Reducir tamaño de las imágenes */
+        height: 100px;
+    }
+}
+
+@media (max-width: 425px) {
+    .circular-carousel {
+        margin-top: 20px;
+        /* Reducir margen superior */
+        margin-left: 20px;
+        /* Centramos horizontalmente */
+        margin-right: 20px;
+        width: 90%;
+        /* Ancho más flexible */
+    }
+
+    .circular-slide {
+        gap: 20px;
+        /* Reducir el espacio entre imágenes */
+    }
+
+    .circular-slide img {
+        width: 90px;
+        /* Reducir tamaño de las imágenes */
+        height: 90px;
+    }
+}

@@ -1,0 +1,258 @@
+/* HomePage.css */
+
+/* Global Styles */
+.global {
+    background: rgb(255, 255, 255);
+}
+
+.filtroglobal {
+    color: rgb(0, 0, 0);
+    padding: 0px 0px 0px 20px;
+}
+
+.divicion {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 35px;
+
+}
+
+.divicion h1 {
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 16px;
+    animation: scrollText 15s linear infinite;
+
+}
+
+
+
+/* Animación del texto */
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.divicion:hover h1 {
+    animation-play-state: paused;
+}
+
+/* Filtro Global */
+.filtroglobal ul:nth-of-type(1) {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+    padding-bottom: 60px;
+    width: 140px;
+    overflow: hidden;
+}
+
+.filtroglobal li {
+    padding-top: 10px;
+}
+
+/* Filtros */
+.filt {
+    padding: 40px 20px 10px 10px;
+    background: rgb(245, 244, 244);
+    width: 250px;
+    height: auto;
+}
+
+/* Lista de colores */
+.filt ul.color-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+.filt ul.color-list li {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Colores para los círculos */
+.filt ul.color-list li.red {
+    background-color: #f44336;
+}
+
+.filt ul.color-list li.blue {
+    background-color: #2196F3;
+}
+
+.filt ul.color-list li.green {
+    background-color: #4CAF50;
+}
+
+.filt ul.color-list li.yellow {
+    background-color: #FFEB3B;
+}
+
+.filt ul.color-list li.orange {
+    background-color: #FF9800;
+}
+
+.filt ul.color-list li.purple {
+    background-color: #9C27B0;
+}
+
+.filt ul.color-list li.brown {
+    background-color: #795548;
+}
+
+.filt ul.color-list li.pink {
+    background-color: #E91E63;
+}
+
+.filt ul.color-list li.gray {
+    background-color: #9E9E9E;
+}
+
+.filt ul.color-list li.black {
+    background-color: #000000;
+}
+
+/* Home.css */
+.eltodo {
+    display: flex;
+    width: 100%;
+}
+
+/* Contenedor de filtros */
+.filt {
+    padding: 40px 20px 10px 10px;
+    background: rgb(245, 244, 244);
+    width: 250px;
+    height: auto;
+}
+
+/* Contenedor de las imágenes debajo del carrusel */
+.image-pair-container {
+    margin-top: 20px;
+    margin-left: 160px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo para las imágenes dentro del contenedor */
+.image-pair img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin: 10px;
+    border: 5px solid #616161;
+}
+
+/* Efecto de escala al pasar el cursor */
+.image-pair img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividad con media queries */
+
+/* Pantallas pequeñas (tabletas y móviles en modo horizontal) */
+@media (max-width: 1024px) {
+
+    /* Ajuste de las imágenes */
+    .image-pair-container {
+        margin-left: 220px;
+        margin-right: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-pair img {
+        width: 46%;
+        /* Imágenes más pequeñas en pantallas pequeñas */
+    }
+
+
+
+}
+
+@media (max-width: 768px) {
+    .filt {
+        display: none;
+        /* El filtro desaparece en pantallas pequeñas */
+    }
+
+    /* Ajuste de las imágenes */
+    .image-pair-container {
+        margin-left: 20px;
+        margin-right: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-pair img {
+        width: 45%;
+        /* Imágenes más pequeñas en pantallas pequeñas */
+    }
+
+    /* Ajuste del carrusel */
+    .carousel {
+        height: 250px;
+        /* Reducir altura en pantallas más pequeñas */
+    }
+
+    .carousel-content {
+        flex-direction: column;
+    }
+
+    .carousel-content img {
+        transform: translateY(0);
+    }
+}
+
+/* Pantallas muy pequeñas (móviles en modo retrato) */
+@media (max-width: 480px) {
+    .filt {
+        display: none;
+        /* El filtro también desaparece en móviles pequeños */
+    }
+
+    .image-pair-container {
+        margin-left: 3px;
+        margin-right: 25px;
+        flex-direction: column;
+    }
+
+    .image-pair img {
+        width: 100%;
+    }
+
+    .carousel {
+        height: 200px;
+        /* Más reducido en móviles */
+    }
+
+    .carousel-content {
+        flex-direction: column;
+    }
+
+    button.prev,
+    button.next {
+        width: 30px;
+        height: 30px;
+    }
+}

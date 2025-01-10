@@ -1,0 +1,293 @@
+/* CardGlobal.css */
+
+/* Contenedor de tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0px 300px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(95, 93, 93);
+    width: 230px;
+    height: 380px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Imagen de la tarjeta */
+.card-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.2);
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    padding: 7px 11px;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+    color: #0a0a0a;
+}
+
+.card-content p {
+    margin: 5px 0;
+    color: #0a0a0a;
+}
+
+/* Botones dentro de la tarjeta */
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-btn {
+    background-image: linear-gradient(150deg, #9500ff, #09f, #00DDFF);
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    padding: 2px 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-btn:hover {
+    background-color: #0056b3;
+}
+
+.card-btn:active {
+    transform: scale(0.95);
+}
+
+.card-btn span {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 13px;
+    border-radius: 6px;
+    transition: 0.3s;
+    z-index: 1;
+    position: relative;
+}
+
+.card-btn:hover span {
+    background: none;
+    color: #fff;
+}
+
+.card-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(150deg, #9500ff, #09f, #00DDFF);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card-btn:hover::before {
+    opacity: 1;
+}
+
+.card-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries para Responsividad */
+
+/* Para pantallas más pequeñas (tabletas y móviles) */
+
+
+/* Para pantallas aún más pequeñas (móviles en modo retrato) */
+/* Media Queries para Responsividad */
+
+/* Para pantallas más grandes (tabletas y móviles medianos) */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .card {
+        width: 30%;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+
+    .card-btn {
+        font-size: 15px;
+        padding: 5px 3px;
+        line-height: 1;
+    }
+
+    .card-btn span {
+        padding: 8px;
+        border-radius: 6px;
+    }
+}
+
+/* Para pantallas más pequeñas (móviles en modo retrato) */
+@media (max-width: 425px) {
+    .card-container {
+        padding: 5px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    .card {
+        width: 48%;
+        height: 330px;
+        margin-bottom: 10px;
+    }
+
+    .card-btn {
+        font-size: 14px;
+        padding: 5px 3px;
+        line-height: 1;
+    }
+
+    .card-btn span {
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    .card-btn {
+        background-color: black;
+        background-image: none;
+        /* Elimina el gradiente */
+        color: white;
+        /* Asegúrate de que el texto sea visible */
+    }
+
+    .card-btn span {
+        background-color: transparent;
+        /* Evita conflictos con el fondo */
+    }
+
+    .card-btn:hover {
+        background-color: #333;
+        /* Un color negro más claro al hacer hover */
+    }
+
+    .card-btn::before {
+        display: none;
+        /* Oculta el gradiente al hacer hover */
+    }
+}
+
+@media (max-width: 375px) {
+    .card-container {
+        padding: 1px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    .card {
+        width: 48%;
+        height: 330px;
+        margin-bottom: 12px;
+    }
+
+    .card-btn {
+        font-size: 13px;
+        padding: 6px 3px;
+        line-height: 1;
+    }
+
+    .card-btn span {
+        padding: 3px;
+        border-radius: 6px;
+    }
+
+    .card-btn {
+        background-color: black;
+        background-image: none;
+        /* Elimina el gradiente */
+        color: white;
+        /* Asegúrate de que el texto sea visible */
+    }
+
+    .card-btn span {
+        background-color: transparent;
+        /* Evita conflictos con el fondo */
+    }
+
+    .card-btn:hover {
+        background-color: #000000;
+        /* Un color negro más claro al hacer hover */
+    }
+
+    .card-btn::before {
+        display: none;
+        /* Oculta el gradiente al hacer hover */
+    }
+}
+
+@media (max-width: 375px) {
+    .card-container {
+        padding: 1px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    .card {
+        width: 48%;
+        height: 330px;
+        margin-bottom: 12px;
+    }
+
+    .card-btn {
+        font-size: 11px;
+        padding: 5px 2px;
+        line-height: 1;
+    }
+
+    .card-btn span {
+        padding: 3px;
+        border-radius: 6px;
+    }
+}
