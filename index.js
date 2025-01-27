@@ -4,7 +4,6 @@ import crypto from 'crypto';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import authRoutes from './src/routes/authRoutes.js';
-import taskRoutes from './src/routes/taskRoutes.js';
 import productRoutes from './src/routes/productRoutes.js';
 import cloudinaryRoutes from './src/routes/cloudinaryRoutes.js';
 
@@ -27,7 +26,6 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/auth', authRoutes);
-app.use('/api/tasks', taskRoutes);
 app.use('/api/products', productRoutes);
 app.use('/cloudinary', cloudinaryRoutes);
 
