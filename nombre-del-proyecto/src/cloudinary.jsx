@@ -4,8 +4,8 @@ import "./components/Cloudinary.css"; // Importa el archivo CSS
 
 const Cloudinary = () => {
 
-    const preset_name = "proyectoDDC";                         //16 Pegamos el "name" rescatado en el punto 24
-    const cloud_name = "dyhcfc5vx"                          //16.2 Pegamos el cloud_name rescatado en punto 20
+    const preset_name = "Productos_E-hop";                         //16 Pegamos el "name" rescatado en el punto 24
+    const cloud_name = "dhmj0jngh"                          //16.2 Pegamos el cloud_name rescatado en punto 20
 
     const [ image, setImage ] = useState('');       //12 Creamos estado local que guarde la url de la imagen subida
     const [ loading, setLoading ] = useState(false) //7 Creamos un estado local con valor incial boolean "false" para saber si la imagen esta cargando.
