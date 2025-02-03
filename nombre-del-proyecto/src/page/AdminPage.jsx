@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Cloudinary from '../cloudinary'; // Importa el componente Cloudinary
 import ProductForm from '../components/ProductForm';
 import ProductList from '../components/ProductList';
 import productService from '../services/productService';
@@ -26,8 +25,8 @@ const AdminPage = () => {
         setProducts((prevProducts) => [...prevProducts, newProduct]);
     };
 
-    const handleUpload = (uploadedFile) => {
-        console.log('Archivo subido:', uploadedFile);
+    const handleUpload = (uploadImage) => {
+        console.log('Archivo subido:', uploadImage);
         // Opcional: asociar URL del archivo subido a un producto
     };
 
@@ -37,10 +36,10 @@ const AdminPage = () => {
             {error && <p style={{ color: 'red' }}>{error}</p>}
             
             {/* Componente Cloudinary para subir imÃ¡genes */}
-            <Cloudinary /> 
             
             <ProductForm onProductAdded={handleProductAdded} />
             <ProductList products={products} />
+            
         </div>
     );
 };

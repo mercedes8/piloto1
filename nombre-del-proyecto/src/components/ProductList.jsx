@@ -24,7 +24,8 @@ const ProductList = () => {
                     <p>{product.description}</p>
                     <p>Precio: ${product.price}</p>
                     <p>Stock: {product.stock}</p>
-                    {product.imageUrl && <img src={product.imageUrl} alt={product.name} />}
+                    {product.imageUrlFrente && <img src={product.imageUrlFrente} alt={product.name} />}
+                    {product.imageUrlEspalda && <img src={product.imageUrlEspalda} alt={product.name} />}
                 </div>
             ))}
         </div>

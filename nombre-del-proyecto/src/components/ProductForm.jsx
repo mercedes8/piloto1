@@ -9,7 +9,8 @@ const ProductForm = () => {
         price: '',
         category: '',
         stock: '',
-        imageUrl: ''
+        imageUrlFrente: '',
+        imageUrlEspalda: ''
     });
 
     const handleChange = (e) => {
@@ -20,7 +21,7 @@ const ProductForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await productService.addProduct(product);
-        setProduct({ name: '', description: '', price: '', category: '', stock: '', imageUrl: '' });
+        setProduct({ name: '', description: '', price: '', category: '', stock: '', imageUrlFrente: '', imageUrlEspalda: '' });
     };
 
     return (
@@ -64,11 +65,18 @@ const ProductForm = () => {
                     placeholder="Stock" 
                 />
                 <input 
-                    type="text" 
-                    name="imageUrl" 
-                    value={product.imageUrl} 
+                    type="file" 
+                    name="imageUrlFrente" 
+                    //value={product.imageUrlFrente} 
                     onChange={handleChange} 
-                    placeholder="Imagen URL" 
+                    placeholder="Imagen Frente" 
+                />
+                <input 
+                    type="file" 
+                    name="imageUrlEspalda" 
+                    //value={product.imageUrlEspalda} 
+                    onChange={handleChange} 
+                    placeholder="Imagen Espalda" 
                 />
                 <button type="submit">Agregar Producto</button>
             </form>
@@ -76,4 +84,5 @@ const ProductForm = () => {
     );
 };
 
-export default ProductForm;
+
+export default ProductForm ;

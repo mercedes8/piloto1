@@ -5,13 +5,12 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import authRoutes from './src/routes/authRoutes.js';
 import productRoutes from './src/routes/productRoutes.js';
-import cloudinaryRoutes from './src/routes/cloudinaryRoutes.js';
 
 // Cargar variables de entorno
 dotenv.config();
 
 // Validar variables de entorno
-if (!process.env.MONGODB_URI || !process.env.CLOUDINARY_API_SECRET) {
+if (!process.env.MONGODB_URI ) {
   console.error("Variables de entorno faltantes. Por favor, verifica el archivo .env");
   process.exit(1);
 }
@@ -27,7 +26,6 @@ app.use(express.json());
 // Rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
-app.use('/cloudinary', cloudinaryRoutes);
 
 // Ruta para generar la firma
 app.post("/generate-signature", (req, res) => {
