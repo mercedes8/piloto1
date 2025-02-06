@@ -23,6 +23,11 @@ const ProductForm = () => {
         setProduct({ name: '', description: '', price: '', category: '', stock: '', imageUrl: '' });
     };
 
+    const InteriorForm = (e) => {
+        console.log('AAAAAA')
+        console.log(FormData)
+    };
+
     return (
         <div className="form-container">
             <form className="product-form" onSubmit={handleSubmit}>
@@ -69,6 +74,16 @@ const ProductForm = () => {
                     value={product.imageUrl} 
                     onChange={handleChange} 
                     placeholder="Imagen URL" 
+                />
+                <button type="submit">Agregar Producto</button>
+            </form>
+            <form className="product-form" onSubmit={InteriorForm} action={'http://localhost:3000/images/single'} method='post'>
+                <input 
+                    type="file" 
+                    name="imageUrlFrente" 
+                    id="imageUrlFrente" 
+                    //value={product.imageUrlFrente} 
+                    placeholder="Imagen Frente" 
                 />
                 <button type="submit">Agregar Producto</button>
             </form>
